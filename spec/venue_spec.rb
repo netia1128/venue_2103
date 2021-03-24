@@ -68,3 +68,27 @@ end
       expect(venue.over_capacity?).to eq (true)
     end
   end
+
+  # Iteration 4
+
+  describe '#kick_out' do
+    it 'kicks out patrons to comply with capacity limit' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      venue.add_patron('James')
+      venue.add_patron('Cat')
+      venue.kick_out
+      expect(venue.over_capacity?).to eq (false)
+        expect(venue.patrons.count).to eq (4)
+    end
+    it 'does not kick anyone out if under capacity  expect(venue.patrons.count).to eq (2)' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.kick_out
+      expect(venue.over_capacity?).to eq (false)
+      expect(venue.patrons.count).to eq (2)
+    end
+  end

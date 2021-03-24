@@ -22,10 +22,16 @@ class Venue
   end
 
   def over_capacity?
-    if patrons.count > 4
+    if @patrons.count > 4
       true
     else
       false
+    end
+  end
+
+  def kick_out
+    until @patrons.count < 5
+      @patrons.shift
     end
   end
 
