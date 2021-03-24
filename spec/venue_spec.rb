@@ -46,7 +46,6 @@ describe Venue do
       expect(venue.yell_at_patrons).to eq ['MIKE', 'MEGAN', 'BOB']
     end
   end
-end
 
   # Iteration 3
 
@@ -92,3 +91,5 @@ end
       expect(venue.patrons.count).to eq (2)
     end
   end
+
+end
